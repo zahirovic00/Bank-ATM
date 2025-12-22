@@ -12,3 +12,18 @@ C:\Users\User\Desktop\IT\Kodiranje\C#\Projekti\Bank ATM\obj\Debug\net9.0\refint\
 C:\Users\User\Desktop\IT\Kodiranje\C#\Projekti\Bank ATM\obj\Debug\net9.0\Temp.pdb
 C:\Users\User\Desktop\IT\Kodiranje\C#\Projekti\Bank ATM\obj\Debug\net9.0\Temp.genruntimeconfig.cache
 C:\Users\User\Desktop\IT\Kodiranje\C#\Projekti\Bank ATM\obj\Debug\net9.0\ref\Temp.dll
+C:\Users\User\Documents\Code\Projects\obj\Debug\net9.0\Temp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Documents\Code\Projects\obj\Debug\net9.0\Temp.AssemblyInfoInputs.cache
+C:\Users\User\Documents\Code\Projects\obj\Debug\net9.0\Temp.AssemblyInfo.cs
+C:\Users\User\Documents\Code\Projects\obj\Debug\net9.0\Temp.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\Code\Projects\obj\Debug\net9.0\Temp.sourcelink.json
+C:\Users\User\Documents\Code\Projects\obj\Debug\net9.0\Temp.dll
+C:\Users\User\Documents\Code\Projects\obj\Debug\net9.0\refint\Temp.dll
+C:\Users\User\Documents\Code\Projects\obj\Debug\net9.0\Temp.pdb
+C:\Users\User\Documents\Code\Projects\bin\Debug\net9.0\Temp.exe
+C:\Users\User\Documents\Code\Projects\bin\Debug\net9.0\Temp.deps.json
+C:\Users\User\Documents\Code\Projects\bin\Debug\net9.0\Temp.runtimeconfig.json
+C:\Users\User\Documents\Code\Projects\bin\Debug\net9.0\Temp.dll
+C:\Users\User\Documents\Code\Projects\bin\Debug\net9.0\Temp.pdb
+C:\Users\User\Documents\Code\Projects\obj\Debug\net9.0\Temp.genruntimeconfig.cache
+C:\Users\User\Documents\Code\Projects\obj\Debug\net9.0\ref\Temp.dll

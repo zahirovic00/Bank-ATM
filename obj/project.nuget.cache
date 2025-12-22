@@ -1,10 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "33KcW90TtF4=",
+  "dgSpecHash": "zCePXaS0vqw=",
   "success": true,
-  "projectFilePath": "/home/amar/Documents/Code/Projects/C#/Bank ATM/Temp.csproj",
-  "expectedPackageFiles": [
-    "/home/amar/.nuget/packages/microsoft.aspnetcore.app.ref/9.0.9/microsoft.aspnetcore.app.ref.9.0.9.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\User\\Documents\\Code\\Projects\\Temp.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }
