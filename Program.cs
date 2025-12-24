@@ -6,10 +6,10 @@ namespace ATM
 		static void Main(string[] args)
 		{
 			/* To-do:
-			   -Limit the name only to characters
-			   -Limit the pincode only to 4 chiphers
+			   -Limit the name only to characters (@byt3 - done 12/24/2025)
+			   -Limit the pincode only to 4 chiphers (@byt3 - done 12/24/2025)
 			   -Limit the currency choice only to 4
-			   -Generate error messages for wrong entries in personal data and automaticly restart the app
+			   -Generate error messages for wrong entries in personal data and automaticly restart the app (@byt3 - done 12/24/2025)
 			 */
 			//Set Variable values
 			Console.Clear();
@@ -20,10 +20,10 @@ namespace ATM
 			int menuChoice = 0;
 			string name = "?";
 			bool validateEntry = false;
-
+			
+			//Enter name
 			do
 			{
-				//Personal Data entry
 				Console.WriteLine("//////////Enter your Personal Data//////////\n");
 				Console.Write("Please enter your name: ");
 				string? nameEntry = Console.ReadLine();
@@ -36,44 +36,29 @@ namespace ATM
 				}
 				else
 				{ 
-					Console.WriteLine($"Your name cannot contain numbers ({nameEntry}), it can only consist of letters");
+					Console.WriteLine($"Your name cannot contain numbers or be empty ({nameEntry}), it can only consist of letters");
 				}
 
 			}while (validateEntry == false);
 
-
+			//Enter PinCode
 			do
 			{
+				validateEntry = false;				
+		
 				Console.WriteLine("//////////Enter your Personal Data//////////\n");
 				Console.Write("Please enter your PIN Code: ");
 				string? pinCodeEntry = Console.ReadLine();
 				bool resultCheck = int.TryParse(pinCodeEntry, out pinCode);
-				if ( resultCheck == true && pinCode != 0)
+				if ( resultCheck == true && pinCodeEntry != "" && pinCodeEntry.Length == 4)
 				{
-
-					Console.WriteLine(pinCode);
-					Console.ReadKey();
 					validateEntry = true;
 				}
 				else
 				{
-					Console.WriteLine($"Your PIN Code cannot contain letters ({pinCodeEntry}), it can only consist of numbers");
+					Console.WriteLine($"Your PIN Code cannot contain letters or be empty, it can only consist of four digits");
 				}	
 			}while(validateEntry == false);
-
-
-
-			/*	//Personal Data entry
-				Console.WriteLine("//////////Enter your Personal Data//////////\n");
-				Console.Write("Please enter your name: ");
-				string? nameEntry = Console.ReadLine();
-				name = nameEntry;
-				Console.Clear();
-
-				Console.WriteLine("//////////Enter your Personal Data//////////\n");
-				Console.Write("Please enter your PIN Code: ");
-				int pinCodeEntry = Convert.ToInt32(Console.ReadLine());
-				pinCode = pinCodeEntry;*/
 
 			MainMenu.setCurrency(ref currency);
 			Console.Clear();
@@ -131,43 +116,53 @@ namespace ATM
 			Console.Write("\nEnter your choice: ");
 			int menuChoice = Convert.ToInt32(Console.ReadLine());
 
-			if (menuChoice == 2)
+			//Change the If statement with a Switch Statement -byt3 @12/24/2025
+
+			if (menuChoice == 0)
 			{
-				depositAmount(ref name, ref balance, ref currentBalance, ref currency,ref pinCode);
-				Console.Clear();
-				choiceMenu(ref name, ref balance, ref currentBalance, ref currency, ref pinCode);
-			}else if(menuChoice == 1)
-			{
-				withdrawAmount(ref name, ref balance, ref currentBalance, ref currency, ref pinCode);
-				Console.Clear();
-				choiceMenu(ref name, ref balance, ref currentBalance, ref currency, ref pinCode);
-			}else if (menuChoice== 3)
-			{
-				checkBalance(ref name, ref balance, ref currentBalance, ref currency, ref pinCode);
-				Console.Clear();
-				choiceMenu(ref name, ref balance, ref currentBalance, ref currency, ref pinCode);
-			}else if (menuChoice == 4)
-			{
-				changePin(ref name, ref balance, ref currentBalance, ref currency, ref pinCode);
-				Console.Clear();
-				choiceMenu(ref name, ref balance, ref currentBalance, ref currency, ref pinCode);
-			} else if (menuChoice == 5)
-			{
-				setCurrency(ref currency);
-				Console.Clear();
-				choiceMenu(ref name, ref balance, ref currentBalance, ref currency, ref pinCode);
-			}
-			else if (menuChoice == 0)
-			{
+				Console.WriteLine("\nThank you for using our Bank ATM\nWe wish you a nice day\n\nPress Enter to quit");
+				Console.ReadKey();
 				Environment.Exit(0);
-			} else
-			{
-				Console.Clear();
-				Console.WriteLine("Error:You have entered the wrong choice.\nYou will be retuned to the main menu!\n");
-				Console.Write("Press Enter to continue.");
-				Console.ReadLine();
-				choiceMenu(ref name, ref balance, ref currentBalance, ref currency, ref pinCode);
 			}
+			else
+			{
+
+				switch(menuChoice) {
+					case 1:
+						withdrawAmount(ref name, ref balance, ref currentBalance, ref currency, ref pinCode);
+						Console.Clear();
+						choiceMenu(ref name, ref balance, ref currentBalance, ref currency, ref pinCode);
+						break;
+					case 2:
+						depositAmount(ref name, ref balance, ref currentBalance, ref currency, ref pinCode);
+						Console.Clear();
+						choiceMenu(ref name, ref balance, ref currentBalance, ref currency, ref pinCode);
+						break;
+					case 3:
+						checkBalance(ref name, ref balance, ref currentBalance, ref currency, ref pinCode);
+						Console.Clear();
+						choiceMenu(ref name, ref balance, ref currentBalance, ref currency, ref pinCode);
+						break;
+					case 4:
+						changePin(ref name, ref balance, ref currentBalance, ref currency, ref pinCode);
+						Console.Clear();
+						choiceMenu(ref name, ref balance, ref currentBalance, ref currency, ref pinCode);
+						break;
+					case 5: 
+						setCurrency(ref currency);
+						Console.Clear();
+						choiceMenu(ref name, ref balance, ref currentBalance, ref currency, ref pinCode);
+						break;
+					default:
+						Console.Clear();
+						Console.WriteLine("Error: You have entered the wrong choice.\nYou will be returned to the main menu!\n");
+						Console.Write("Press Enter to continue");
+						Console.ReadKey();
+						choiceMenu(ref name, ref balance, ref currentBalance, ref currency, ref pinCode);
+						break;
+				};
+			};
+
 		}
 		public static void depositAmount(ref string name, ref int balance, ref int currentBalance, ref string currency, ref int pinCode)
 		{
@@ -254,13 +249,13 @@ namespace ATM
 
 			string? recepitCapital = choRecepit.ToUpper();
 
-			if (recepitCapital == "YES")
+			if (recepitCapital == "YES" || recepitCapital == "Y")
 			{
 				Console.Clear();
 				Console.WriteLine("\nThank you for choosing our Bank!\nPlease take out your recepit and keep it safe\n\nWe wish you a nice rest of the day!\n");
 				Console.Write("\nPress Enter to continue");
 				Console.ReadLine();
-			} else if (recepitCapital == "NO")
+			} else if (recepitCapital == "NO" || recepitCapital == "N")
 			{
 				Console.Clear();
 				Console.WriteLine("\nThank you for choosing our Bank.\nWe wish you a nice rest of the day!\n");
@@ -277,4 +272,3 @@ namespace ATM
 	}
 }
 
-string gitPushPlease = "?";

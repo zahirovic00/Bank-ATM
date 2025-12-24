@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Documents\\Code\\Projects\\Temp.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Documents\\Code\\Projects\\ATM\\Temp.csproj",
       "projectName": "Temp",
-      "projectPath": "C:\\Users\\User\\Documents\\Code\\Projects\\Temp.csproj",
+      "projectPath": "C:\\Users\\User\\Documents\\Code\\Projects\\ATM\\Temp.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Documents\\Code\\Projects\\obj\\",
+      "outputPath": "C:\\Users\\User\\Documents\\Code\\Projects\\ATM\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
